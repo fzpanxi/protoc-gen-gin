@@ -1,4 +1,4 @@
-#protoc-gen-go-gin
+# protoc-gen-go-gin
 
 从 protobuf 文件中生成使用 gin 的 http rpc 服务，同时兼容 gRPC 服务。
 
