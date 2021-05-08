@@ -2,6 +2,10 @@
 
 从 protobuf 文件中生成使用 gin 的 http rpc 服务，同时兼容 gRPC 服务。
 
+- 支持rest参数
+- 支持url query参数
+- 支持post/put http body json
+
 
 请确保安装了以下依赖:
 
