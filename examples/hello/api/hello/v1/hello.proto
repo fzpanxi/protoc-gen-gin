@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package fzpanxi.gg.example.hello.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/fzpanxi/protoc-gen-go-gin/examples/hello/api/hello/v1";
+
+service HelloService {
+  rpc GetHello (GetHelloRequest) returns (GetHelloReply)  {
+    option (google.api.http) = {
+      get: "/v1/hello/{name}"
+      additional_bindings {
+        get: "/v1/hello_world/{name}"
+      }
+    };
+  }
+  rpc PostHello (PostHelloRequest) returns (PostHelloReply)  {
+    option (google.api.http) = {
+      post: "/v1/hello",
+      body: "*"
+    };
+  }
+}
+message GetHelloRequest {
+  string name = 1;
+}
+
+
+message GetHelloReply {
+  string message = 1;
+}
+
+message PostHelloRequest {
+  string name = 1;
+}
+message  PostHelloReply {
+  string name = 1;
+}
